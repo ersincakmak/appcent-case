@@ -13,7 +13,7 @@ const AppContainer = styled.div`
   display: flex;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
   flex-direction: column;
 `
 

@@ -4,6 +4,9 @@ import styled from 'styled-components'
 const Container = styled.div`
   padding: 0.5em 1em;
   background-color: ${(props) => props.theme.colors.primary.base};
+  position: sticky;
+  top: 0;
+  z-index: 5;
 `
 
 const Inner = styled.div`
