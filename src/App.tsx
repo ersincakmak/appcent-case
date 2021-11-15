@@ -7,6 +7,7 @@ import styled, { ThemeProvider } from 'styled-components'
 import baseTheme from './theme/baseTheme'
 import ResetCss from './theme/ResetCss'
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 const AppContainer = styled.div`
   display: flex;
@@ -29,6 +30,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <Footer />
         </BrowserRouter>
       </AppContainer>
     </ThemeProvider>
