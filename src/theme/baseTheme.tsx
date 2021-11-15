@@ -2,6 +2,7 @@ import { DefaultTheme } from 'styled-components'
 
 const baseTheme: DefaultTheme = {
   borderRadius: '5px',
+  containerWidth: 'min(75rem,100%)', // 1200px
   colors: {
     text: {
       base: '#252525',
