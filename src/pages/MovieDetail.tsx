@@ -1,12 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Navigate } from 'react-router-dom'
 import styled from 'styled-components'
 import CastCard from '../components/CastCard'
 import DetailCard from '../components/DetailCard'
 import { getCasts, getSingleMovie } from '../constants/api'
 import breakpoints from '../constants/breakpoints'
 import { Cast, Credits, SingleMovie } from '../types/movie'
+import NotFound from './NotFound'
 
 const Container = styled.div`
   display: flex;
@@ -39,14 +40,20 @@ const CastGrid = styled.div`
 const MovieDetail = () => {
   const [movie, setmovie] = useState<SingleMovie>()
   const [casts, setcasts] = useState<Cast[]>([])
+  const [loading, setloading] = useState(false)
 
   const { id } = useParams()
 
   const getMovieInformation = async () => {
-    const { data } = await getSingleMovie(id as string).request<SingleMovie>({
-      method: 'GET',
-    })
-    setmovie(data)
+    setloading(false)
+
+    try {
+      const { data } = await getSingleMovie(id as string).request<SingleMovie>({
+        method: 'GET',
+      })
+      setmovie(data)
+    } catch (error) {}
+    setloading(true)
   }
 
   const getCastHandler = async () => {
@@ -61,8 +68,12 @@ const MovieDetail = () => {
     getCastHandler()
   }, [])
 
-  if (!movie) {
+  if (!loading) {
     return null
+  }
+
+  if (!movie) {
+    return <NotFound />
   }
 
   return (
