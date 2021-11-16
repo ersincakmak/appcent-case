@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react'
-import { useParams, Navigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import CastCard from '../components/CastCard'
 import DetailCard from '../components/DetailCard'

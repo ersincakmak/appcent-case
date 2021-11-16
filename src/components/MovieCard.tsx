@@ -14,8 +14,10 @@ const Container = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 
   img {
-    height: 100%;
+    width: 100%;
+    aspect-ratio: 2 / 3;
     object-fit: cover;
+    user-select: none;
   }
 
   :hover .hoverLink {
@@ -26,7 +28,7 @@ const Container = styled.div`
     position: absolute;
     inset: 0;
     background-color: ${(props) => props.theme.colors.primary.hover};
-    z-index: 9999;
+    z-index: 5555;
     transform: translateY(110%);
     transition: all 0.2s ease;
     display: flex;

@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -6,7 +7,7 @@ const Container = styled.div`
   background-color: ${(props) => props.theme.colors.primary.base};
   position: sticky;
   top: 0;
-  z-index: 5;
+  z-index: 9999;
 `
 
 const Inner = styled.div`
@@ -47,13 +48,45 @@ const Logo = styled(Link)`
 `
 
 const Header = () => {
+  const ref = useRef<HTMLDivElement>(null)
+
   return (
-    <Container>
+    <Container ref={ref}>
       <Inner>
-        <Logo to="/">EMDB</Logo>
+        <Logo
+          to="/"
+          onClick={() => {
+            ref.current?.parentElement?.scrollTo({
+              top: 0,
+              behavior: 'smooth',
+            })
+          }}
+        >
+          EMDB
+        </Logo>
         <Links>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/about">About</NavLink>
+          <NavLink
+            to="/"
+            onClick={() => {
+              ref.current?.parentElement?.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+              })
+            }}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/about"
+            onClick={() => {
+              ref.current?.parentElement?.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+              })
+            }}
+          >
+            About
+          </NavLink>
         </Links>
       </Inner>
     </Container>
