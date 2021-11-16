@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import Card from '../components/Card'
+import MovieCard from '../components/MovieCard'
 import Jumbotron from '../components/Jumbotron'
-import { movieApi } from '../contants/api'
-import quote from '../contants/quote'
+import { movieApi } from '../constants/api'
+import quote from '../constants/quote'
 import { MoviesResult, Result } from '../types/movie'
-import breakpoints from '../contants/breakpoints'
+import breakpoints from '../constants/breakpoints'
 
 const HomeContainer = styled.div`
   display: flex;
@@ -66,7 +66,7 @@ const Home = () => {
         ) : (
           <MovieGrid>
             {movies.map((item) => (
-              <Card key={item.id} data={item} />
+              <MovieCard key={item.id} data={item} />
             ))}
           </MovieGrid>
         )}

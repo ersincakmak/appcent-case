@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { imageUrl } from '../contants/api'
+import { imageUrl } from '../constants/api'
 import { Result } from '../types/movie'
 
 const Container = styled.div`
@@ -62,7 +62,7 @@ interface Props {
   data: Result
 }
 
-const Card: React.FC<Props> = ({ data }) => {
+const MovieCard: React.FC<Props> = ({ data }) => {
   return (
     <Container>
       <img src={imageUrl(data.poster_path)} alt="" />
@@ -78,4 +78,4 @@ const Card: React.FC<Props> = ({ data }) => {
   )
 }
 
-export default Card
+export default MovieCard

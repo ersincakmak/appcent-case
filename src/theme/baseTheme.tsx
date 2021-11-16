@@ -6,7 +6,7 @@ const baseTheme: DefaultTheme = {
   colors: {
     text: {
       base: '#252525',
-      gray: '#909090',
+      gray: '#aaaaaa',
       contrast: '#eeeeee',
     },
     primary: {

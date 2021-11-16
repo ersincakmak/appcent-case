@@ -85,5 +85,9 @@ const ResetCss = createGlobalStyle`
         text-decoration: none;
         list-style: none;
     }
+
+    html{
+        font-family: sans-serif;
+    }
 `
 export default ResetCss

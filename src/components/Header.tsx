@@ -39,16 +39,18 @@ const Links = styled.div`
   gap: 1em;
 `
 
-const Logo = styled.h1`
+const Logo = styled(Link)`
   color: ${(props) => props.theme.colors.primary.hover};
   user-select: none;
+  font-size: 1.875rem; // 30px
+  font-weight: 600;
 `
 
 const Header = () => {
   return (
     <Container>
       <Inner>
-        <Logo>EMDB</Logo>
+        <Logo to="/">EMDB</Logo>
         <Links>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About</NavLink>
