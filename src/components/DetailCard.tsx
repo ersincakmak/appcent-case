@@ -158,7 +158,7 @@ const DetailCard: React.FC<Props> = ({ movie }) => {
                 </span>
                 <p className="date">
                   {movie.runtime / 60 > 0
-                    ? (movie.runtime / 60).toFixed(0) + 'h'
+                    ? Math.floor(movie.runtime / 60) + 'h'
                     : ''}{' '}
                   {(movie.runtime % 60) + 'm'}
                 </p>

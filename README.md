@@ -2,7 +2,7 @@
 
 This repo created for appcent case study. 
 
-[Demo](https://appcent-case.netlify.app/)
+[Demo](https://appcent-case-ersincakmak.netlify.app)
 
 ## Techs
 
